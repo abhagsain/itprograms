@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<div style="text-align: center;">
+		<title>STUDENT FORM</title>
+		<h1>STUDENT REGISTRATION FORM</h1>
+		<form>
+			Name : <input type="text" id="name"><br><br>
+			Roll no: <input type="text" id="roll"><br><br>
+			DOB : <input type="date" id="dob"><br><br>
+			<input type="submit" value="Submit" onclick="validate()" />
+		</form>
+	</div>
+
+</head>
+
+<body>
+	<script>
+		function validate() {
+			var name = document.getElementById("name").value;
+			var roll = document.getElementById("roll").value;
+			var dob = document.getElementById("dob").value;
+			var regname = /^[A-Za-z ]{1,}$/;
+			var regroll = /^[0-9]{7}$/;
+			if (!name == "" && !roll == "" && !dob == "") {
+				if (!regname.test(name)) {
+					alert("Name must be alphabets only!!");
+				}
+				if (!regroll.test(roll)) {
+					alert("Roll no should be number with 7 lenght!");
+				}
+				if (regname.test(name) && regroll.test(roll)) {
+					var a = new Date(dob);
+					a = a.toDateString();
+					document.write(a);
+				}
+			} else {
+				alert("All fields are required");
+			}
+		}
+	</script>
+</body>
+
+</html>

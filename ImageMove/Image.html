@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>Image scroll</title>
+	<script type="text/javascript">
+		var w, i = 0;
+
+		function Start() {
+			var a = document.getElementById("1");
+			a.style.position = "relative";
+			a.style.left = i + "px";
+			i = i + 200;
+		}
+
+		function Interval() {
+			w = setInterval("Start()", 1000);
+		}
+
+		function Stop() {
+			var a = clearInterval(w);
+		}
+	</script>
+</head>
+
+<body>
+	<h2>
+		<center>Horizontal Image Scrolling
+	</h2>
+	</center>
+	<br><br><img src="./Img.jpeg" id="1" height="200" width="400"><br>
+	<center>
+		<form>
+			<h2><input type="button" value="Start" id="2" onClick="Interval()">
+				<input type="button" Value="Stop" id="3" onClick="Stop()">
+		</form>
+	</center>
+</body>
+
+</html>

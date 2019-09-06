@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Mystack</title>
+	<script type="text/javascript">
+		var a=new Array();
+		//var top=-1;
+		function push()
+		{
+			var num=document.getElementById("enter");
+			var push1=document.getElementById("stack");
+			if(num.value=="")
+			alert("Please enter some value to be pushed!!");
+			else
+			{
+				/*top++;
+				alert(top);
+				a[top]=num.value;*/
+				var regex=/[," "_]/;
+				if(regex.test(num.value))
+				{
+					alert("Please enter number or alphabets only!!")
+				}
+				else
+				{
+					a.push(num.value);
+					push1.value=a;
+					num.value="";
+					num.focus();
+				}
+			}
+		}
+		function pop()
+		{
+			var s=document.getElementById("stack");
+			if(a.length!=0)
+			{
+				//top--;
+				a.pop();
+				s.value=a;
+			}
+			else
+			alert("The stack is empty!!");
+		}
+	</script>
+</head>
+<body>
+    <form style="text-align: center;">
+	<h3>Stack Methods</h3>
+	Enter number: <input type="text" id="enter"><br><br>
+	&nbsp;&nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp; Stack: <input type="text" id="stack"><br><br>
+	<input type="button" value="push" onClick="push()">
+	<input type="button" value="pop" onClick="pop()"/>
+	
+   </form>
+</body>
+</html>

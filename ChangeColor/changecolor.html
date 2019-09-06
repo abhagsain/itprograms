@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>The Color Will Be Changed In 2 seconds</title>
+	<script type="text/javascript">
+		function color() {
+			var a = document.getElementById("textBox");
+			var b = setTimeout(change, 2000);
+
+			function change() {
+				a.style.color = "red";
+			}
+		}
+	</script>
+</head>
+
+<body>
+	<form>
+		<center>
+			<h1>
+				<font color="blue">
+					<p id="textBox"><b>Lets change it</p>
+				</font>
+				<input type="button" value="Change Color" onClick="color()">
+		</center>
+	</form>
+</body>
+
+</html>
